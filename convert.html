@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Développeur Web & Mobile : Rachel Nething</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="convert-style.css">
+
+  <meta property="og:title" content="Développeur Web et Mobile : Rachel Nething (06 Grasse)">
+  <meta property="og:description" content="Convertisseur de chiffres romains.">
+  <meta property="og:image" content="http://www.rachelnething.dev/img/karroad_home.png">
+  <meta property="og:url" content="http://www.rachelnething.dev/convert.php">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class=”convertissor”>
+            <p class="center">Conversion en chiffres romains</p>
+            <input type="text" class=”convertissor-screen” value="0" />    
+
+            <div class="keyboard">
+                <button value="9">9</button>
+                <button value="8">8</button>
+                <button value="7">7</button>
+                <button value="6">6</button>
+                <button value="5">5</button>
+                <button value="4">4</button>
+                <button value="3">3</button>
+                <button value="2">2</button>
+                <button value="1">1</button>
+                <button value="0">0</button>
+                <button class="equal" data-action="convert">=</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <form>
+        <input type="number" id="number" />
+        <button onclick="parseToRoman(document.getElementById('number').value)">convertir</button>
+    </form>
+</body>
+  
+<script src="./roman.js"></script>
+</html>
