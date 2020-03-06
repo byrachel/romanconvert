@@ -1,14 +1,13 @@
 body {
     background-color: #dbf1f3;
-
 }
 
 p {
     font-family: 'Alata', sans-serif;
     text-transform: uppercase;
     color: #045062;
-    letter-spacing: 1px;
-    font-size: 1em;
+    letter-spacing: 3px;
+    font-size: 0.9em;
 }
 
 .center {
@@ -17,36 +16,31 @@ p {
 
 .container {
     display: flex;
-    width: 450px;;
+    width: 450px;
     margin-left: auto;
     margin-right: auto;
     padding: 25px;
 }
 
-input {
-  padding: 10px;
-  width: 350px;
-  border: none;
-  font-size: 1.7em;
+#convertissor-screen {
+  padding: 25px;
+  width: 400px;
+  height: 100px;
+  margin: 10px;
+}
+
+#screen {
+  font-size: 1.8em;
   text-align: center;
   font-family: 'Alata', sans-serif;
   text-transform: uppercase;
   color: #045062;
-  box-shadow:  20px 20px 60px #bacdcf, 
-  -20px -20px 60px #fcffff;
-  margin: 10px;
-}
+  height: 50px;
+  border: 1px solid #fcffff;
+  background-color: rgba(255,255,255,0.40);
+  padding: 15px;
+  border-radius: 20px;
 
-.convertissor-screen {
-    width: 100%;
-    font-size: 5rem;
-    height: 80px;
-    border: none;
-    background-color: #252525;
-    color: #fff;
-    text-align: right;
-    padding-right: 20px;
-    padding-left: 10px;
 }
 
 button {
@@ -74,7 +68,7 @@ button {
     background-color: #f17377;
   }
 
-  .keyboard {
+  #keyboard {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
@@ -84,4 +78,12 @@ button {
   .equal {
     grid-column-start: 2;
     grid-column-end: 4;
+  }
+
+  @media screen and (max-width: 800px) {
+    .container {
+      width: 100%;
+      max-width: 800px;
+      padding: 5px;
+  }
   }
