@@ -5,62 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Développeur Web & Mobile : Rachel Nething</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alata|Spartan&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="convert-style.css">
 
-  <meta property="og:title" content="Développeur Web et Mobile : Rachel Nething (06 Grasse)">
-  <meta property="og:description" content="Convertisseur de chiffres romains.">
+  <meta property="og:title" content="Développeur Front-End : Rachel Nething (06 Grasse)">
+  <meta property="og:description" content="Convertisseur de chiffres romains">
   <meta property="og:image" content="http://www.rachelnething.dev/img/karroad_home.png">
-  <meta property="og:url" content="http://www.rachelnething.dev/convert.php">
+  <meta property="og:url" content="http://www.rachelnething.dev/convert/convert.html">
 
   <script>
     
-    var numberToConvert = 0;
+    let numberToConvert = '';
+    let result = '';
 
     function handleNumber(data) {
-        numberToConvert = document.getElementById("screen").innerHTML+=data;
+        numberToConvert = document.getElementById('screen').innerHTML+=data;
         return numberToConvert;
     }
 
     function parseToRoman(data) {
-        data = numberToConvert;
         const decimal = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
-        const roman = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
-        let result = '';
+        const roman = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
         if(data > 0 && data < 4000) {
             for(let i=0; i<decimal.length; i++) {
                 if(data%decimal[i] < data) {
-                    result += roman[i];
-                    data -= decimal[i];
+
+                    while (data >= decimal[i]) {
+                        data -= decimal[i];
+                        result += roman[i];
+                    }
                 }
             }
-            console.log(result)
-
+            document.getElementById('romanScreen').innerHTML=result;
         }
         else {
-            return data;
+            return;
         }
-  }
+    }
 
-        // roman numeral
-        var romanNum = new Array();
-         romanNum = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
-         // decimal number
-         var dNum = new Array();
-         dNum = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
-         function decimalRoman(value) {
-            if (value <= 0 || value >= 4000)
-               return value;
-               var romanNumeral = "";
-            for (var i = 0; i<romanNum.length; i++) {
-               while (value >= dNum[i]) {
-                  value -= dNum[i];
-                  romanNumeral += romanNum[i];
-               }
-            }
-            return romanNumeral;
-         }
+    function clearData() {
+        result= '';
+        document.getElementById('screen').innerHTML='';
+        document.getElementById('romanScreen').innerHTML=result;
+    }
   
     </script>
 
@@ -70,10 +57,15 @@
     <div class="container">
 
         <div class=”convertissor”>
-            <p class="center">conversion en chiffres romains</p>
-            <div id=”convertissor-screen”>
+            <p class="center">- conversion -</p>
+            <h1 class="center">Les chiffres romains</h1>
+            <p class="center">de 1 à 3999</p>
+            <div class=”convertissor-screen”>
                 <p id="screen"></p>
-            </div>    
+            </div>   
+            <div class=”convertissor-screen”>
+                <p id="romanScreen"></p>
+            </div>   
             <div id="keyboard">
                 <button type="button" onclick="handleNumber(1)">1</button>
                 <button type="button" onclick="handleNumber(2)">2</button>
@@ -85,12 +77,16 @@
                 <button type="button" onclick="handleNumber(8)">8</button>
                 <button type="button" onclick="handleNumber(9)">9</button>
                 <button type="button" onclick="handleNumber(0)">0</button>
-                <button type="button" class="equal" onclick="parseToRoman(numberToConvert)">=</button>
+                <button type="button" onclick="clearData()">c</button>
+                <button type="button" onclick="parseToRoman(numberToConvert)">=</button>
             </div>
         </div>
 
     </div>
 
+    <footer>
+        <p class="center">Rachel Nething | <a href="https://github.com/byrachel/romanconvert">Github</a> | <a href="https://www.linkedin.com/in/rachel-nething/">Linkedin</a> | <a href="https://rachelnething.dev/">Portfolio</a></p>
+    </footer>
 
 </body>
   

@@ -2,12 +2,31 @@ body {
     background-color: #dbf1f3;
 }
 
+h1 {
+  font-family: 'Alata', sans-serif;
+  text-transform: uppercase;
+  color: #045062;
+  letter-spacing: 3px;
+  font-size: 1.6em;
+  margin: 0;
+  padding: 0;
+}
+
 p {
-    font-family: 'Alata', sans-serif;
-    text-transform: uppercase;
-    color: #045062;
-    letter-spacing: 3px;
-    font-size: 0.9em;
+  font-family: 'Spartan', sans-serif;
+  color: #045062;
+  font-size: 0.6em;
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  color: #045062;
+}
+
+a:hover {
+  background-color: #045062;
+  color: white;
 }
 
 .center {
@@ -15,18 +34,26 @@ p {
 }
 
 .container {
-    display: flex;
-    width: 450px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 25px;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 
-#convertissor-screen {
-  padding: 25px;
+.convertissor {
+  width: 450px;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); */
+}
+
+.convertissor-screen {
+  padding: 20px;
   width: 400px;
-  height: 100px;
-  margin: 10px;
+  height: 90px;
+  margin: 5px;
 }
 
 #screen {
@@ -38,7 +65,20 @@ p {
   height: 50px;
   border: 1px solid #fcffff;
   background-color: rgba(255,255,255,0.40);
-  padding: 15px;
+  /* padding: 10px; */
+  border-radius: 20px;
+
+}
+#romanScreen {
+  font-size: 1.8em;
+  text-align: center;
+  font-family: 'Alata', sans-serif;
+  text-transform: uppercase;
+  color: #045062;
+  height: 50px;
+  border: 1px solid #fcffff;
+  background-color: rgba(255,255,255,0.40);
+  /* padding: 15px; */
   border-radius: 20px;
 
 }
@@ -75,15 +115,5 @@ button {
     padding: 20px;
   }
 
-  .equal {
-    grid-column-start: 2;
-    grid-column-end: 4;
-  }
-
-  @media screen and (max-width: 800px) {
-    .container {
-      width: 100%;
-      max-width: 800px;
-      padding: 5px;
-  }
+  footer {
   }
